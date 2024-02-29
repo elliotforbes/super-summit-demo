@@ -24,8 +24,8 @@ workflows:
       
   say-hello-tag-workflow:
     jobs:
-      - say-hello
-    filters: 
-      tags:
-        only: 
-          - /^v.*/
+      - say-hello:
+          filters: 
+            tags:
+              only: 
+                - /^v.*/
