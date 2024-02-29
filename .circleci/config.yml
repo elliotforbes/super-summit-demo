@@ -21,3 +21,11 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      
+  say-hello-tag-workflow:
+    jobs:
+      - say-hello
+    filters: 
+      tags:
+        only: 
+          - /^v.*/
