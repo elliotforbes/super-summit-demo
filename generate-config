@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo <<< EOF
+cat <<EOF
 version: 2.1
 
 
@@ -34,4 +34,4 @@ workflows:
                     tags:
                         only: 
                             - /^v.*/
-EOF  > generated_config.yml
+EOF > generated_config.yml
