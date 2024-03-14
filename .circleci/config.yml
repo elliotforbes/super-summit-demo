@@ -13,7 +13,7 @@ jobs:
       - run:
           name: generate config
           command: | 
-            echo `version: 2.1` > generated_config.yml
+            ./generate-config > generated_config.yml
       - continuation/continue:
           configuration_path: generated_config.yml
 
