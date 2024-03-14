@@ -38,14 +38,14 @@ workflows:
     jobs:
       - setup
 
-  say-hello-workflow:
-    jobs:
-      - say-hello
+#  say-hello-workflow:
+#    jobs:
+#      - say-hello
       
-  say-hello-tag-workflow:
-    jobs:
-      - say-hello:
-          filters: 
-            tags:
-              only: 
-                - /^v.*/
+#  say-hello-tag-workflow:
+#    jobs:
+#      - say-hello:
+#          filters: 
+#            tags:
+#              only: 
+#                - /^v.*/
