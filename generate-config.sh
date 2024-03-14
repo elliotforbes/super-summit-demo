@@ -1,0 +1,37 @@
+#!/bin/bash
+
+echo <<< EOF
+version: 2.1
+
+
+jobs:
+  say-hello:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+      - run:
+          name: "Pipelines Triggering Pipelines OMG"
+          command: |
+            curl 'https://internal.circleci.com/private/soc/webhook/8aaa282a-a941-4fe8-a30c-3ff27c9250fb' \
+              -X POST \
+              -H 'content-type: application/json' \
+              -d '{"status": "success"}'
+
+workflows:
+
+    say-hello-workflow:
+        jobs:
+            - say-hello
+      
+    say-hello-tag-workflow:
+        jobs:
+            - say-hello:
+                filters: 
+                    tags:
+                        only: 
+                            - /^v.*/
+EOF  > generated_config.yml
