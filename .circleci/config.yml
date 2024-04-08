@@ -41,7 +41,7 @@ workflows:
  say-hello-workflow:
   when:
     and: 
-      - equal: [<< pipeline.git.branch >>, test-branch]
+      - equal: [<< pipeline.git.branch >>, not-test-branch]
   jobs:
     - say-hello
       
