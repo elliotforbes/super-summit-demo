@@ -34,13 +34,13 @@ jobs:
               -d '{"status": "success"}'
 
 workflows:
-  setup:
-    jobs:
-      - setup
+  # setup:
+  #   jobs:
+  #     - setup
 
-#  say-hello-workflow:
-#    jobs:
-#      - say-hello
+ say-hello-workflow:
+   jobs:
+     - say-hello
       
 #  say-hello-tag-workflow:
 #    jobs:
