@@ -39,8 +39,11 @@ workflows:
   #     - setup
 
  say-hello-workflow:
-   jobs:
-     - say-hello
+  when:
+    and: 
+      - equal: [<< pipeline.git.branch >>, test-branch]
+  jobs:
+    - say-hello
       
 #  say-hello-tag-workflow:
 #    jobs:
